@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:victorbellofoundation/app_navigator/bloc/app_navigator_bloc.dart';
 import 'package:victorbellofoundation/app_navigator/path.dart';
+import 'package:victorbellofoundation/login/view/view.dart';
 
 class NavigatorManager {
   static AppNavigatorBloc _withContext(BuildContext context) {
@@ -15,6 +16,17 @@ class NavigatorManager {
       PagePushEvent(
         MaterialPage(
           child: Container(),
+          key: UniqueKey(),
+        ),
+      ),
+    );
+  }
+
+  static goToLogin(BuildContext context) {
+    _withContext(context).add(
+      PagePushEvent(
+        MaterialPage(
+          child: const LoginPage(),
           key: UniqueKey(),
         ),
       ),
