@@ -12,10 +12,12 @@ class App extends StatelessWidget {
       routeInformationParser: AppRouteParser(),
       routerDelegate: AppRouter(),
       debugShowCheckedModeBanner: false,
+      themeMode: ThemeMode.dark,
       darkTheme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: Colors.black,
         colorScheme: const ColorScheme.dark().copyWith(),
-        textTheme: GoogleFonts.montserratTextTheme(textTheme),
+        textTheme: GoogleFonts.montserratTextTheme(
+            textTheme.apply(bodyColor: Colors.white)),
       ),
     );
   }
