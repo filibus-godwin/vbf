@@ -1,7 +1,8 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:victorbellofoundation/app_navigator/app_navigator.dart';
+import 'package:victorbellofoundation/splash/view/splash.dart';
 
 part 'app_navigator_state.dart';
 part 'app_navigator_event.dart';
@@ -9,7 +10,10 @@ part 'app_navigator_event.dart';
 typedef Emit = Emitter<AppNavigatorState>;
 
 class AppNavigatorBloc extends Bloc<AppNavigatorEvent, AppNavigatorState> {
-  AppNavigatorBloc() : super(const AppNavigatorState(pages: [])) {
+  AppNavigatorBloc()
+      : super(AppNavigatorState(pages: [
+          MaterialPage(child: const SplashPage(), key: UniqueKey()),
+        ])) {
     on<PagePushEvent>(_pagePushEvent);
     on<LastPagePopEvent>(_lastPagePopEvent);
     on<FirstPagePopEvent>(_firstPagePopEvent);
