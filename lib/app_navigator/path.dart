@@ -29,3 +29,8 @@ class SignupPagePath extends AppPath {
   const SignupPagePath();
   static const info = _AppPathInfo("signup");
 }
+
+class OtpPagePath extends AppPath {
+  const OtpPagePath();
+  static const info = _AppPathInfo("otp");
+}

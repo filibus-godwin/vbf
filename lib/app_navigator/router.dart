@@ -61,6 +61,8 @@ class AppRouteParser extends RouteInformationParser<path.AppPath> {
         return RouteInformation(location: path.LoginPagePath.info.location);
       case path.SignupPagePath:
         return RouteInformation(location: path.SignupPagePath.info.location);
+      case path.OtpPagePath:
+        return RouteInformation(location: path.OtpPagePath.info.location);
       default:
         return RouteInformation(location: path.UnknownPagePath.info.location);
     }
