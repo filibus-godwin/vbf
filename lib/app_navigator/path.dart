@@ -12,10 +12,20 @@ class _AppPathInfo {
 
 class UnknownPagePath extends AppPath {
   const UnknownPagePath();
-  static const info = _AppPathInfo("/404");
+  static const info = _AppPathInfo("404");
 }
 
 class SplashPagePath extends AppPath {
   const SplashPagePath();
   static const info = _AppPathInfo("splash");
+}
+
+class LoginPagePath extends AppPath {
+  const LoginPagePath();
+  static const info = _AppPathInfo("login");
+}
+
+class SignupPagePath extends AppPath {
+  const SignupPagePath();
+  static const info = _AppPathInfo("signup");
 }

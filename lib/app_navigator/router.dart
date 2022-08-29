@@ -57,6 +57,10 @@ class AppRouteParser extends RouteInformationParser<path.AppPath> {
     switch (configuration.runtimeType) {
       case path.SplashPagePath:
         return RouteInformation(location: path.SplashPagePath.info.location);
+      case path.LoginPagePath:
+        return RouteInformation(location: path.LoginPagePath.info.location);
+      case path.SignupPagePath:
+        return RouteInformation(location: path.SignupPagePath.info.location);
       default:
         return RouteInformation(location: path.UnknownPagePath.info.location);
     }
