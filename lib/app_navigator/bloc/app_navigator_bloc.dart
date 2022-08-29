@@ -27,13 +27,13 @@ class AppNavigatorBloc extends Bloc<AppNavigatorEvent, AppNavigatorState> {
   }
 
   _lastPagePopEvent(LastPagePopEvent event, Emit emit) {
-    var pages = state.pages;
+    var pages = List.of(state.pages);
     pages.removeLast();
     emit(state.copyWith(pages: pages));
   }
 
   _firstPagePopEvent(FirstPagePopEvent event, Emit emit) {
-    var pages = state.pages;
+    var pages = List.of(state.pages);
     pages.removeAt(0);
     emit(state.copyWith(pages: pages));
   }
