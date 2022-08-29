@@ -5,10 +5,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:victorbellofoundation/app_navigator/bloc/app_navigator_bloc.dart';
 import 'package:victorbellofoundation/app_navigator/path.dart';
 import 'package:victorbellofoundation/login/view/view.dart';
+import 'package:victorbellofoundation/signup/view/signup.dart';
 
 class NavigatorManager {
   static AppNavigatorBloc _withContext(BuildContext context) {
     return BlocProvider.of<AppNavigatorBloc>(context);
+  }
+
+  static goBack(BuildContext context) {
+    _withContext(context).add(LastPagePopEvent());
   }
 
   static goToSplash(BuildContext context) {
@@ -27,6 +32,17 @@ class NavigatorManager {
       PagePushEvent(
         MaterialPage(
           child: const LoginPage(),
+          key: UniqueKey(),
+        ),
+      ),
+    );
+  }
+
+  static goToSignup(BuildContext context) {
+    _withContext(context).add(
+      PagePushEvent(
+        MaterialPage(
+          child: const SignupPage(),
           key: UniqueKey(),
         ),
       ),
