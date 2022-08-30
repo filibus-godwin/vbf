@@ -7,6 +7,7 @@ import 'package:victorbellofoundation/app_navigator/path.dart';
 import 'package:victorbellofoundation/login/view/view.dart';
 import 'package:victorbellofoundation/otp/view/view.dart';
 import 'package:victorbellofoundation/signup/view/view.dart';
+import 'package:victorbellofoundation/splash/view/view.dart';
 
 class NavigatorManager {
   static AppNavigatorBloc _withContext(BuildContext context) {
@@ -21,8 +22,9 @@ class NavigatorManager {
     _withContext(context).add(
       PagePushEvent(
         MaterialPage(
-          child: Container(),
+          child: const SplashPage(),
           key: UniqueKey(),
+          name: SplashPagePath.info.location,
         ),
       ),
     );
@@ -34,6 +36,7 @@ class NavigatorManager {
         MaterialPage(
           child: const LoginPage(),
           key: UniqueKey(),
+          name: LoginPagePath.info.location,
         ),
       ),
     );
@@ -43,9 +46,9 @@ class NavigatorManager {
     _withContext(context).add(
       PagePushEvent(
         MaterialPage(
-          child: const SignupPage(),
-          key: UniqueKey(),
-        ),
+            child: const SignupPage(),
+            key: UniqueKey(),
+            name: SignupPagePath.info.location),
       ),
     );
   }
@@ -56,6 +59,7 @@ class NavigatorManager {
         MaterialPage(
           child: const OtpPage(),
           key: UniqueKey(),
+          name: OtpPagePath.info.location,
         ),
       ),
     );
