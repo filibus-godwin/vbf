@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:victorbellofoundation/app_navigator/bloc/app_navigator_bloc.dart';
 import 'package:victorbellofoundation/app_navigator/path.dart';
+import 'package:victorbellofoundation/home/view/home.dart';
 import 'package:victorbellofoundation/login/view/view.dart';
 import 'package:victorbellofoundation/otp/view/view.dart';
 import 'package:victorbellofoundation/signup/view/view.dart';
@@ -60,6 +61,18 @@ class NavigatorManager {
           child: const OtpPage(),
           key: UniqueKey(),
           name: OtpPagePath.info.location,
+        ),
+      ),
+    );
+  }
+
+  static goToHome(BuildContext context) {
+    _withContext(context).add(
+      PagePushEvent(
+        MaterialPage(
+          child: const HomePage(),
+          key: UniqueKey(),
+          name: HomePagePath.info.location,
         ),
       ),
     );
