@@ -34,3 +34,8 @@ class OtpPagePath extends AppPath {
   const OtpPagePath();
   static const info = _AppPathInfo("otp");
 }
+
+class HomePagePath extends AppPath {
+  const HomePagePath();
+  static const info = _AppPathInfo("home");
+}
