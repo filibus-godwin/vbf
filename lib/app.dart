@@ -1,24 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:victorbellofoundation/app_navigator/router.dart';
+import 'package:victorbellofoundation/theme/theme.dart';
 
 class App extends StatelessWidget {
-  const App({Key? key}) : super(key: key);
-
+  App({Key? key}) : super(key: key);
+  final router = AppRouter();
   @override
   Widget build(BuildContext context) {
-    TextTheme textTheme = Theme.of(context).textTheme;
     return MaterialApp.router(
       routeInformationParser: AppRouteParser(),
-      routerDelegate: AppRouter(),
+      routerDelegate: router,
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.dark,
-      darkTheme: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: Colors.black,
-        colorScheme: const ColorScheme.dark().copyWith(),
-        textTheme: GoogleFonts.montserratTextTheme(
-            textTheme.apply(bodyColor: Colors.white)),
-      ),
+      darkTheme: AppTheme.dark,
     );
   }
 }
